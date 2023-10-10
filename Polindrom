@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        //Принимаем входную строку
+        Scanner in = new Scanner(System.in);
+        String str=in.nextLine();
+        in.close();
+        //Удаляем,всё кроме букв
+        str=str.replaceAll("[^a-zA-Z0-9]","");
+        //Переводим строку в нижний регистр
+        str=str.toLowerCase();
+        //переводим String в  StringBuffer ,что использвать reverse()
+        StringBuffer buffer = new StringBuffer(str);
+        buffer.reverse();
+        String data = buffer.toString();
+        // Сравниваем начальную и перевёрнутую строки
+        if(str.equals(data)){
+            System.out.println(true);
+        }else {
+            System.out.println(false);
+        }
+    }
+}
